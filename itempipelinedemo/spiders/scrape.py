@@ -7,7 +7,7 @@ class ScrapeSpider(Spider):
     name = 'scrape'
     allowed_domains = ['ssr1.scrape.center']
     base_url = 'https://ssr1.scrape.center'
-    max_page = 1
+    max_page = 10
     
     def start_requests(self):
         for i in range(1, self.max_page + 1):
@@ -17,7 +17,6 @@ class ScrapeSpider(Spider):
     def parse_index(self, response):
         for item in response.css('.item'):
             href = item.css('.name::attr(href)').extract_first()
-            print('href', href)
             url = response.urljoin(href)
             yield Request(url, callback=self.parse_detail)
     

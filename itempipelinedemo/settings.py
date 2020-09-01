@@ -6,6 +6,7 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import os
 
 BOT_NAME = 'itempipelinedemo'
 
@@ -62,10 +63,10 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    # 'itempipelinedemo.pipelines.ElasticsearchPipeline': 300,
-    'itempipelinedemo.pipelines.ImagePipeline': 301,
+    'itempipelinedemo.pipelines.ImagePipeline': 300,
+    'itempipelinedemo.pipelines.MongoDBPipeline': 301,
+    'itempipelinedemo.pipelines.ElasticsearchPipeline': 302,
 }
-
 IMAGES_STORE = './images'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -88,3 +89,8 @@ IMAGES_STORE = './images'
 # HTTPCACHE_DIR = 'httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+ELASTICSEARCH_CONNECTION_STRING = os.getenv('ELASTICSEARCH_CONNECTION_STRING')
+ELASTICSEARCH_INDEX = 'movies'
+MONGODB_CONNECTION_STRING = os.getenv('MONGODB_CONNECTION_STRING')
+MONGODB_DATABASE = 'movies'
+MONGODB_COLLECTION = 'movies'
