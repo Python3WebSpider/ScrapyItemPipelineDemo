@@ -10,7 +10,7 @@ from elasticsearch import Elasticsearch
 
 import pymongo
 
-from itempipelinedemo.items import MovieItem
+from scrapyitempipelinedemo.items import MovieItem
 
 
 class MongoDBPipeline(object):

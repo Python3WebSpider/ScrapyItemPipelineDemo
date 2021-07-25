@@ -1,4 +1,4 @@
-# Scrapy settings for itempipelinedemo project
+# Scrapy settings for scrapyitempipelinedemo project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -8,13 +8,13 @@
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 import os
 
-BOT_NAME = 'itempipelinedemo'
+BOT_NAME = 'scrapyitempipelinedemo'
 
-SPIDER_MODULES = ['itempipelinedemo.spiders']
-NEWSPIDER_MODULE = 'itempipelinedemo.spiders'
+SPIDER_MODULES = ['scrapyitempipelinedemo.spiders']
+NEWSPIDER_MODULE = 'scrapyitempipelinedemo.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'itempipelinedemo (+http://www.yourdomain.com)'
+# USER_AGENT = 'scrapyitempipelinedemo (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    'itempipelinedemo.middlewares.ItempipelinedemoSpiderMiddleware': 543,
+#    'scrapyitempipelinedemo.middlewares.ItempipelinedemoSpiderMiddleware': 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#    'itempipelinedemo.middlewares.ItempipelinedemoDownloaderMiddleware': 543,
+#    'scrapyitempipelinedemo.middlewares.ItempipelinedemoDownloaderMiddleware': 543,
 # }
 
 # Enable or disable extensions
@@ -63,9 +63,9 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'itempipelinedemo.pipelines.ImagePipeline': 300,
-    'itempipelinedemo.pipelines.MongoDBPipeline': 301,
-    'itempipelinedemo.pipelines.ElasticsearchPipeline': 302,
+    'scrapyitempipelinedemo.pipelines.ImagePipeline': 300,
+    'scrapyitempipelinedemo.pipelines.MongoDBPipeline': 301,
+    'scrapyitempipelinedemo.pipelines.ElasticsearchPipeline': 302,
 }
 IMAGES_STORE = './images'
 

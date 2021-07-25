@@ -1,6 +1,6 @@
 from scrapy import Request, Spider
 
-from itempipelinedemo.items import MovieItem
+from scrapyitempipelinedemo.items import MovieItem
 
 
 class ScrapeSpider(Spider):
